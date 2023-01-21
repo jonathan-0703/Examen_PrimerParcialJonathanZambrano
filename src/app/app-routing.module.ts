@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'alert',
+    loadChildren: () => import('./pages/alert/alert.module').then( m => m.AlertPageModule)
+  },
+  {
+    path: 'input-forms',
+    loadChildren: () => import('./pages/input-forms/input-forms.module').then( m => m.InputFormsPageModule)
+  },
 ];
 
 @NgModule({

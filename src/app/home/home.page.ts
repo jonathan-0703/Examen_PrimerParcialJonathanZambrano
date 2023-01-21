@@ -1,12 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+interface Componente {
+  icon: string;
+  name: string;
+  redirectTo: string;
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
+
+    componentes: Componente[] = [
+
+    {
+      icon: 'alert-circle-outline',
+      name: 'Alert',
+      redirectTo: '/alert'
+      },
+    {
+      icon: "newspaper-outline",
+      name: 'Input-Forms',
+      redirectTo: '/input-forms'
+    },
+
+  ];
+  
 
   constructor() {}
+  ngOnInit(): void {
+    
+  }
 
 }
